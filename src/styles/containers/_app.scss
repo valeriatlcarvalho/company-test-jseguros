@@ -1,0 +1,29 @@
+.container-app {
+  align-items: flex-end;
+  display: flex;
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+  &__text {
+    color: $text-white;
+    margin-bottom: 100px;
+    margin-top: 10px;
+    text-align: center;
+
+    @include font($font-size: 16);
+  }
+
+  &__title {
+    color: $text-white;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    text-align: center;
+
+    @include font($font-style: bold, $font-size: 32, $font-line-height: 36);
+  }
+}

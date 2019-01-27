@@ -1,0 +1,9 @@
+@mixin background-gradient-violet($direction) {
+  background-image: linear-gradient($direction, $bg-color-gradient-violet,$bg-color-gradient-lilas);
+  background-image: -moz-linear-gradient($direction, $bg-color-gradient-violet,$bg-color-gradient-lilas);
+  background-image: -webkit-linear-gradient($direction, $bg-color-gradient-violet,$bg-color-gradient-lilas);
+}
+
+@mixin font($font-style: normal, $font-size: 14, $font-line-height: 21, $font-family: 'Helvetica') {
+  font: $font-style #{$font-size}px/#{$font-line-height}px #{$font-family}, Arial, sans-serif;
+}

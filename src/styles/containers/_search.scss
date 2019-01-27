@@ -1,0 +1,135 @@
+.container-search {
+  background-color: $bg-color-grey;
+  display: flex;
+
+  &__body {
+    display: flex;
+    flex: 1;
+    flex-flow: column;
+    flex-grow: 1;
+  }
+
+  &__body-title {
+    display: flex;
+  }
+
+  &__body-title-icon {
+    align-items: center;
+    border: solid 2px $color-violet;
+    color: $text-lilas;
+    display: flex;
+    height: 20px;
+    justify-content: center;
+    margin: 30px;
+    width: 20px;
+
+    @include font($font-style: bold, $font-size: 14, $font-line-height: 16);
+  }
+
+  &__body-title-text {
+    color: $text-black;
+    display: flex;
+    padding: 30px 30px 30px 0;
+
+    @include font($font-style: bold, $font-size: 17);
+  }
+
+  &__button-container {
+    display: flex;
+    flex-flow: column-reverse;
+    justify-self: flex-end;
+    padding: 30px;
+  }
+
+  &__header {
+    align-items: center;
+    display: flex;
+    padding: 15px 30px;
+  }
+
+  &__header-content {
+    display: flex;
+    flex-flow: column;
+    flex-grow: 1;
+    padding: 0 30px;
+  }
+
+  &__header-icon {
+    color: $text-white;
+    display: flex;
+    padding: 0;
+  }
+
+  &__header-identification {
+    color: $text-white;
+
+    @include font($font-size: 14);
+  }
+
+  &__header-title {
+    color: $text-white;
+    margin-bottom: 6px;
+
+    @include font($font-size: 20);
+  }
+
+  &__photo {
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+  }
+
+  &__search-box {
+    background-color: $bg-color-white;
+    display: flex;
+    flex-flow: column;
+    padding: 15px 20px 25px 30px;
+  }
+
+  &__search-input-cnpj {
+    border: none;
+    color: $text-black;
+    display: flex;
+    flex: 1;
+    outline: none;
+
+    @include font($font-size: 24);
+
+    &:focus {
+      border-bottom: solid 2px $color-violet;
+    }
+  }
+
+  &__search-input-group {
+    display: flex;
+  }
+
+  &__search-form {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+  }
+
+  &__search-label-cnpj {
+    color: $text-grey;
+
+    @include font($font-style: bold, $font-size: 14);
+  }
+
+  &__search-status {
+    align-items: center;
+    color: $text-grey;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    padding: 0 0 0 15px;
+
+    &--success {
+      color: $text-green;
+    }
+
+    &--fail {
+      color: $text-red;
+    }
+  }
+}

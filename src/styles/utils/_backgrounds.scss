@@ -1,0 +1,11 @@
+.gradient {
+  @include background-gradient-violet(to left bottom);
+}
+
+.gradient-horizontal {
+  @include background-gradient-violet(to left);
+}
+
+.grey {
+  background-color: $bg-color-grey;
+}
