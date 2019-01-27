@@ -8,6 +8,9 @@ In `node-scripts` directory you can start the api server.
 
 ### `npm start`
 
+Runs api at port 3030.
+Open [http://localhost:3030](http://localhost:3030) to view it in the browser.
+
 # Second action that you must do to initialize the application:
 
 In the project directory, you can run:
