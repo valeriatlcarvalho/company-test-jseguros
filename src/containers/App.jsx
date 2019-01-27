@@ -1,20 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
 import { IoMdTrendingUp, IoIosArrowRoundForward } from 'react-icons/io'
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-
-    this.goToNext = this.goToNext.bind(this)
-  }
-
-  goToNext(event) {
-    event.preventDefault()
-    this.props.history.push(`/search`)
-  }
-
   render () {
     return (
       <div className="container container--home gradient">

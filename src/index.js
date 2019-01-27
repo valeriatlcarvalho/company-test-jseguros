@@ -1,10 +1,10 @@
 import React from 'react'
-import { render } from 'react-dom'
+import ReactDOM from 'react-dom'
 
 import './styles/app.scss'
-import Root from './Root'
+import Root from './Root.jsx'
 
-render(
+ReactDOM.render(
   <Root />,
-  document.getElementById('root')
+  document.getElementById('root') || document.createElement('div')
 )

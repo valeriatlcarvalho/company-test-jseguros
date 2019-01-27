@@ -5,3 +5,5 @@ export const findCnpjCompany = cnpj => http.get(`quote/${cnpj}`, {
     return status === 200 || status === 404;
   }
 })
+
+// http.get(cnpj => `quote/${cnpj}`).then(res => { return { status: res.status, statusText: res.statusText } })

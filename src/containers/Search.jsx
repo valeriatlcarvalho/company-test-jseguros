@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import { IoMdTrendingUp, IoIosCheckmarkCircle, IoIosCloseCircle, IoIosSearch } from 'react-icons/io'
+
 import Button from '../components/Button';
 import { findCnpjCompany } from '../service/search-cnpj';
-import { IoMdTrendingUp, IoIosCheckmarkCircle, IoIosCloseCircle } from 'react-icons/io'
 
 class Search extends Component {
   constructor(props) {
@@ -38,15 +39,14 @@ class Search extends Component {
   submitHandler(event) {
     event.preventDefault()
     let cnpjCompany = this.removeMask(this.state.cnpj)
-    this.setState({ cnpj: cnpjCompany })
 
     findCnpjCompany(cnpjCompany).then((res) => {
+      console.log(res)
       if (res.status === 200) {
         this.setState({
           statusClass: 'container-search__search-status--success',
           status: res.status
         })
-        console.log('this.state', this.state)
       } else if (res.status === 404) {
         this.setState({
           statusClass: 'container-search__search-status--fail',
@@ -57,9 +57,12 @@ class Search extends Component {
   }
 
   render() {
-    let status = this.props.status
-    let classStatus = this.props.statusClass
-    let iconStatus = (status === 200) ? <IoIosCheckmarkCircle /> : <IoIosCloseCircle />
+    let { status, classStatus } = this.state
+    let iconStatus = (status === 200)
+      ? <IoIosCheckmarkCircle className="container-search__search-status--success" />
+      : (status === 404)
+        ? <IoIosCloseCircle className="container-search__search-status--fail" />
+        : <IoIosSearch />
 
     return (
       <div className="container container-search">
@@ -95,6 +98,7 @@ class Search extends Component {
               <div className="container-search__search-input-group">
                 <input
                   id="input-cnpj"
+                  name="cnpj"
                   className="container-search__search-input-cnpj"
                   type="text"
                   onChange={this.changeHandler}
@@ -109,7 +113,6 @@ class Search extends Component {
               type="submit"
               cssClassName="button--secondary"
               label="OK"
-              onClick={this.requestApi}
             ></Button>
           </div>
         </form>
