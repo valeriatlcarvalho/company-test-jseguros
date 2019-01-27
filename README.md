@@ -2,6 +2,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+# First action that you must do:
+
+In `node-scripts` directory you can start the api server.
+
+### `npm start`
+
+# Second action that you must do to initialize the application:
+
 In the project directory, you can run:
 
 ### `npm start`
