@@ -3,7 +3,7 @@ const port = '3030'
 const hostname = 'localhost'
 
 app.listen(port, hostname, function () {
-  console.log(`app listening on port http://${hostname}:${port}`)
+  console.log(`Server listening on port http://${hostname}:${port}`)
 })
 
 

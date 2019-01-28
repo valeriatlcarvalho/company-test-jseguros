@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { IoMdTrendingUp, IoIosCheckmarkCircle, IoIosCloseCircle, IoIosSearch } from 'react-icons/io'
+import axios from 'axios'
+import Button from '../components/Button'
 
-import Button from '../components/Button';
-import { findCnpjCompany } from '../service/search-cnpj';
 
 class Search extends Component {
   constructor(props) {
@@ -40,19 +40,21 @@ class Search extends Component {
     event.preventDefault()
     let cnpjCompany = this.removeMask(this.state.cnpj)
 
-    findCnpjCompany(cnpjCompany).then((res) => {
-      console.log(res)
-      if (res.status === 200) {
-        this.setState({
-          statusClass: 'container-search__search-status--success',
-          status: res.status
-        })
-      } else if (res.status === 404) {
-        this.setState({
-          statusClass: 'container-search__search-status--fail',
-          status: res.status
-        })
+    axios.get(`/quote/${cnpjCompany}`, {
+      header: {
+        'Content-Type': 'application/json',
+        'ACCESS-TOKEN': '23456789'
       }
+    }).then(data => {
+      this.setState({
+        statusClass: 'container-search__search-status--success',
+        status: data.status
+      })
+    }).catch(data => {
+      this.setState({
+        statusClass: 'container-search__search-status--fail',
+        status: 404
+      })
     })
   }
 
